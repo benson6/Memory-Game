@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+ <link rel="stylesheet" href="180718myfirstcss.css">
+<body>
+
+<script>
+document.getElementById("cardone").innerHTML = "New text!";
+</script>
+
+
+
+<h1> Testing Flexbox below- Check Console for Array and it being shuffled. It also grabs all the elements of Class DIV and then populates them with a letter from the shuffled array.</h1>
+
+<div class="container">
+
+
+
+<div class="card" id="card1">J</div>
+<div class="card">A</div>
+<div class="card">Mycard3</div>
+<div class="card">Mycard4</div>
+<div class="card">Mycard5</div>
+<div class="card">Mycard6</div>
+<div class="card">Mycard7</div>
+<div class="card">Mycard8</div>
+<div class="card">Mycard9</div>
+<div class="card">Mycard10</div>
+<div class="card">Mycard11</div>
+<div class="card">Mycard12</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+<script>
+document.getElementById("card1").innerHTML = "B";
+
+//CREATE AN ARRAY OF 12 LETTERS
+let letters =['J','A','K','E','J','A','K','E','B','B','H','H'];
+//Test it
+console.log(letters.length);
+//print array contents
+for (i = 0; i < 12; i++) {
+    console.log(letters[i]);
+}
+
+//shuffle the position of letters in the arrray
+letters.sort(function(a,b){return 0.5 -Math.random()});
+
+//check new array order in console
+for (i = 0; i < 12; i++) {
+    console.log(`Array Position is ${i}` + `contains the letter ${letters[i]}`);
+}
+
+// Get all the element with the claas Name Card and then save them into a variable (a collection) called allCardElements
+
+var allCardElements = document.getElementsByClassName("card");
+
+
+//iterate throgh all card elements and then populate the inner html with the letter G.
+
+for (i = 0; i < 12; i++) {
+	
+	allCardElements[i].innerHTML ='G';
+}
+	
+
+//iterate throgh all card elements and then populate the inner html with a letter from the shuffled array of letters.
+
+for (i = 0; i < 12; i++) {
+	
+	allCardElements[i].innerHTML =letters[i];
+}
+	
+
+	//  use the get elements by class name to return a htmlcollection with every class name "container"
+	let containerVariable = document.getElementsByClassName("container");
+
+
+	// confirm the type of ContainerVariable  in the console
+	console.log(containerVariable.toString());
+
+	//use the HTMLCollection.item(index) to get the single element , the container div from the collection
+	containerVariable = containerVariable.item(0);
+	
+	//confirm thats what I've got
+	console.log(containerVariable.toString());
+	
+
+
+	
+	containerVariable.addEventListener('click', function (event) {
+
+window.alert("Container Class Clicked");
+console.log(event.toString());
+
+let clicked = event.target;
+console.log( clicked.toString());
+console.log(clicked.innerHTML);
+
+window.alert(clicked.innerHTML);
+
+})
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
