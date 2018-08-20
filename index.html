@@ -12,7 +12,7 @@ document.getElementById("cardone").innerHTML = "New text!";
 
 
 
-<h1> Testing Flexbox below- Check Console for Array and it being shuffled. It also grabs all the elements of Class DIV and then populates them with a letter from the shuffled array.</h1>
+<h1> Match the Letters !</h1>
 
 <div class="container">
 
@@ -94,28 +94,70 @@ for (i = 0; i < 12; i++) {
 	console.log(containerVariable.toString());
 	
 
+//variable to count number of selections and variable to store card clicked for comparison, had to move the initial setting of it out of the event listener becuase it was reinitialising it each time.
+let count = 0;
 
+//variables to store the string i.e letter from the selected card
+let firstCard;
+let secondCard;
+	
+	//check  function to check if the letters match
+	const check = function check () {
+	firstCard === secondCard ? 
+	//test ternary "B" === "B" ?
+	window.alert("MATCHED PAIRS"):
+	window.alert("NO MATCH");
+	
+	}
+	
+	const resetcount = function resetcount () {
+	count = 0;
+	}
 	
 	containerVariable.addEventListener('click', function (event) {
 
-window.alert("Container Class Clicked");
+//debug window.alert("Container Class Clicked");
 console.log(event.toString());
 
 let clicked = event.target;
 console.log( clicked.toString());
 console.log(clicked.innerHTML);
 
-window.alert(clicked.className);
+// debug window.alert(clicked.className);
 
 // check if the clicked item was a card or a container
 
 if (clicked.className === 'container') {
 return;
 }	
-
 clicked.classList.add('selected');
 
 console.log(clicked.classList);
+
+
+
+count = count + 1;
+window.alert(count);
+
+
+count == 1 ? 
+window.alert("count is one"): window.alert("count is two");
+
+
+count == 1 ? 
+firstCard = clicked.innerHTML: 
+secondCard = clicked.innerHTML;
+
+if (count == 2) {
+resetcount();
+check();
+}
+
+
+
+
+
+
 
 
 })
