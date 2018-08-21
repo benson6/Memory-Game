@@ -7,7 +7,7 @@
 <body>
 
 <script>
-document.getElementById("cardone").innerHTML = "New text!";
+//document.getElementById("cardone").innerHTML = "New text!";
 </script>
 
 
@@ -103,10 +103,27 @@ let secondCard;
 	
 	//check  function to check if the letters match
 	const check = function check () {
-	firstCard === secondCard ? 
-	//test ternary "B" === "B" ?
-	window.alert("MATCHED PAIRS"):
+	
+	
+	if (firstCard.innerHTML === secondCard.innerHTML) {
+	window.alert("MATCHED PAIRS")
+	  let selected = document.querySelectorAll('.selected');
+      selected.forEach(card => {
+    card.classList.remove('selected');
+	card.innerHTML = '&#10004;';
+	});
+	
+	
+	}
+	else {
+	
 	window.alert("NO MATCH");
+	
+	let selected = document.querySelectorAll('.selected');
+      selected.forEach(card => {
+    card.classList.remove('selected');
+	
+	});
 	
 	}
 	
@@ -137,30 +154,24 @@ console.log(clicked.classList);
 
 
 count = count + 1;
-window.alert(count);
+// debug to check count increment window.alert(count);
+
+
+// debug to check count == 1 ? 
+//window.alert("count is one"): window.alert("count is two");
 
 
 count == 1 ? 
-window.alert("count is one"): window.alert("count is two");
-
-
-count == 1 ? 
-firstCard = clicked.innerHTML: 
-secondCard = clicked.innerHTML;
+firstCard = clicked: 
+secondCard = clicked;
 
 if (count == 2) {
 resetcount();
 check();
 }
+});
 
 
-
-
-
-
-
-
-})
 
 
 
