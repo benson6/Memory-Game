@@ -46,4 +46,18 @@ body {
 .selected
 {
 	color: Yellow;
+	text-align: center;
+	font-size:8em;
+	
+}
+
+.complete
+{
+	pointer-events : none;
+	text-align: center;
+	margin: 10px;
+	
+	
+	
+	
 }

@@ -39,6 +39,8 @@
 
 </div>
 
+<audio id="audio" src="sounds\264981__renatalmar__sfx-magic (1).wav" autostart="false" ></audio>
+
 <script>
 document.getElementById("card1").innerHTML = "B";
 
@@ -106,11 +108,17 @@ let secondCard;
 	
 	
 	if (firstCard.innerHTML === secondCard.innerHTML) {
-	window.alert("MATCHED PAIRS");
+	var correctSound = document.getElementById('audio');
+	 correctSound.play();
+
+	//window.alert("MATCHED PAIRS");
 	  let selected = document.querySelectorAll('.selected');
       selected.forEach(card => {
     card.classList.remove('selected');
 	card.innerHTML = '&#10004;';
+	card.classList.add('complete');
+	
+	
 	});
 	
 	
